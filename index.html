@@ -30,6 +30,9 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards;
         }
 
         /* Profile Section */
@@ -37,12 +40,14 @@
             font-size: 24px;
             margin-bottom: 10px;
             color: #333;
+            animation: fadeIn 1.5s ease;
         }
 
         .profile p {
             font-size: 16px;
             color: #666;
             margin-bottom: 30px;
+            animation: fadeIn 1.8s ease;
         }
 
         /* Links Section */
@@ -58,13 +63,54 @@
             color: #fff;
             padding: 12px;
             border-radius: 8px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             font-size: 16px;
             font-weight: 500;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards;
         }
 
+        .links a:nth-child(1) {
+            animation-delay: 0.4s;
+        }
+
+        .links a:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .links a:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        .links a:nth-child(4) {
+            animation-delay: 1s;
+        }
+
+        /* Hover Effect for Links */
         .links a:hover {
             background-color: #007bff;
+            transform: scale(1.05);
+        }
+
+        /* Keyframes for Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -77,7 +123,7 @@
 
         <div class="links">
             <a href="https://xplay.gg/" target="_blank">Deathmatch</a>
-            <a href="csnades.gg" target="_blank">CS2 Nades</a>
+            <a href="https://csnades.gg" target="_blank">CS2 Nades</a>
             <a href="https://www.youtube.com/@austincsgo" target="_blank">AustinCS</a>
             <a href="https://www.youtube.com/@Pol0cs" target="_blank">Pol0</a>
         </div>
